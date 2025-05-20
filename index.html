@@ -11,17 +11,26 @@
 </head>
 
 <body>
-    <form class="" action="/" method="post">
-        <label for="cityInput">City Name: </label>
-        <input id="cityInput" type="text" name="cityName">
-        <button type="submit">Go</button>
-    </form>
-
+    <div class="form-container">
+        <form action="/" method="post">
+            <label for="cityInput">City Name: </label>
+            <input id="cityInput" type="text" name="cityName">
+            <button type="submit">Go</button>
+        </form>
+    </div>
     <footer>
+        <p>
+            &copy; <span id="year"></span> Kenny Hector
+        </p>
         <p>
             Icons by <a href="https://www.flaticon.com/free-icons/weather" title="weather icons">Freepik - Flaticon</a>
         </p>
     </footer>
 </body>
+
+<script>
+    // Set current year dynamically for footer
+    document.getElementById("year").textContent = new Date().getFullYear();
+</script>
 
 </html>
