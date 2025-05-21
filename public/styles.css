@@ -33,6 +33,11 @@ h1 {
     font-style: italic;
 }
 
+img {
+    height: 200px;
+    width: 200px;
+}
+
 footer {
     margin-top: auto;
     padding: 15px;
