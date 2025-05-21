@@ -27,7 +27,12 @@ button {
     border-radius: 5px;
 }
 
-/* Sticky footer styles */
+h1 {
+    padding: 15px;
+    font-size: 4.50rem;
+    font-style: italic;
+}
+
 footer {
     margin-top: auto;
     padding: 15px;
