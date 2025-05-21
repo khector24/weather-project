@@ -33,9 +33,27 @@ h1 {
     font-style: italic;
 }
 
+.weather {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 img {
     height: 200px;
     width: 200px;
+}
+
+.search-btn-div {
+    width: 100%;
+}
+
+.search-again-btn {
+    border: 1px solid black;
+    border-radius: 3px;
+    padding: 10px;
+    width: 10rem;
 }
 
 footer {
