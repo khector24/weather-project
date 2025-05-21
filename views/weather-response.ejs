@@ -1,36 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <title>Weather in <%= city %>
-    </title>
-    <link rel="stylesheet" href="/styles.css">
-</head>
+<%- include("partials/head") %>
 
-<body>
-    <% if (error) { %>
-        <h1>
-            <%= error %>
-        </h1>
-        <% } else { %>
-            <h1>Weather in <%= city %>
+    <body>
+        <% if (error) { %>
+            <h1>
+                <%= error %>
             </h1>
-            <div class="weather">
-                <p>
-                    <%= description %>
-                </p>
-                <p>Temperature: <%= temp %> °F</p>
-                <img src="<%= iconURL %>" alt="Weather icon">
-            </div>
-            <% } %>
-                <br>
-                <div class="search-btn-div">
-                    <a class="search-again-btn" href="/">Search again</a>
+            <% } else { %>
+                <h1>Weather in <%= city %>
+                </h1>
+                <div class="weather">
+                    <p>
+                        <%= description %>
+                    </p>
+                    <p>Temperature: <%= temp %> °F</p>
+                    <img src="<%= iconURL %>" alt="Weather icon">
                 </div>
+                <% } %>
+                    <br>
+                    <div class="search-btn-div">
+                        <a class="search-again-btn" href="/">Search again</a>
+                    </div>
 
-                <%- include("partials/footer") %>
+                    <%- include("partials/footer") %>
 
-</body>
+    </body>
 
 </html>
