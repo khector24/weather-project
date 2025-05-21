@@ -58,8 +58,8 @@ img {
 
 footer {
     margin-top: auto;
-    padding: 15px;
-    height: 60px;
+    padding: 20px;
+    /* height: 60px; */
     width: 100%;
     background: orange;
     color: white;
@@ -67,4 +67,8 @@ footer {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+footer p {
+    margin: 10px;
 }
