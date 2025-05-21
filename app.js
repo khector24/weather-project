@@ -1,7 +1,6 @@
 import dotenv from "dotenv";
 
 import express from "express";
-import https from "https";
 import bodyParser from "body-parser";
 
 dotenv.config();
