@@ -14,25 +14,38 @@ app.get("/", function (req, res) {
     res.sendFile(__dirname + "/index.html")
 });
 
-app.post("/", function (req, res) {
+app.post("/", (req, res) => {
     const query = req.body.cityName;
     const apiKey = process.env.API_KEY;
     const unit = "imperial";
-    const url = "https://api.openweathermap.org/data/2.5/weather?q=" + query + "&appid=" + apiKey + "&units=" + unit;
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${query}&appid=${apiKey}&units=${unit}`;
 
-    https.get(url, function (response) {
-        console.log(response.statusCode);
-
-        response.on("data", function (data) {
+    https.get(url, (response) => {
+        response.on("data", (data) => {
             const weatherData = JSON.parse(data);
+
+            if (weatherData.cod !== 200) {
+                return res.render("weather-response", {
+                    error: "City not found. Please try again.",
+                    temp: null,
+                    description: null,
+                    iconURL: null,
+                    city: query
+                });
+            }
+
             const temp = weatherData.main.temp;
-            const weatherDescription = weatherData.weather[0].description;
+            const description = weatherData.weather[0].description;
             const icon = weatherData.weather[0].icon;
-            const imageURL = "https://openweathermap.org/img/wn/" + icon + "@2x.png";
-            res.write("<h1>The temperature in " + query + " is " + temp + " fahrenheit.</h1>");
-            res.write("<p>The temperature is currently " + weatherDescription + "</p>");
-            res.write("<img src=" + imageURL + ">");
-            res.send();
+            const iconURL = `https://openweathermap.org/img/wn/${icon}@2x.png`;
+
+            res.render("weather-response", {
+                temp,
+                description,
+                iconURL,
+                city: query,
+                error: null
+            });
         });
     });
 });
