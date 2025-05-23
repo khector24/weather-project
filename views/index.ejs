@@ -1,15 +1,17 @@
 <%- include("partials/head") %>
 
     <body>
-        <h1>What's the weather like in ...</h1>
+        <main>
+            <h1>What's the weather like in ...</h1>
 
-        <div class="form-container">
-            <form action="/" method="post">
-                <label for="cityInput">City Name: </label>
-                <input id="cityInput" type="text" name="cityName">
-                <button type="submit">Go</button>
-            </form>
-        </div>
+            <div class="form-container">
+                <form action="/" method="post">
+                    <label for="cityInput">City Name: </label>
+                    <input id="cityInput" type="text" name="cityName">
+                    <button type="submit">Go</button>
+                </form>
+            </div>
+        </main>
         <%- include("partials/footer") %>
 
     </body>
