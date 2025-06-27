@@ -1,19 +1,22 @@
 <%- include("partials/head") %>
 
-    <body>
-        <main>
-            <h1>What's the weather like in ...</h1>
+<body>
+  <main>
+    <h1>Enter a City to See the Weather Forecast</h1>
+    <div class="form-container">
+      <form action="/" method="post">
+        <label for="cityInput">Type in your desired city:</label>
+        <input 
+          id="cityInput" 
+          type="text" 
+          name="cityName" 
+          placeholder="City Name"
+        />
+        <button type="submit">Go</button>
+      </form>
+    </div>
+  </main>
 
-            <div class="form-container">
-                <form action="/" method="post">
-                    <label for="cityInput">City Name: </label>
-                    <input id="cityInput" type="text" name="cityName">
-                    <button type="submit">Go</button>
-                </form>
-            </div>
-        </main>
-        <%- include("partials/footer") %>
-
-    </body>
-
-    </html>
+  <%- include("partials/footer") %>
+</body>
+</html>
