@@ -20,9 +20,8 @@ main {
   flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  padding: 40px 20px;
+  /* padding: 40px 20px; */
   background-image: url("/assets/images/clouds.png"); /* future-ready */
   background-repeat: no-repeat;
   background-position: top;
@@ -34,6 +33,52 @@ main h1 {
   font-size: 2.5rem;
   font-weight: 600;
   margin-bottom: 30px;
+}
+
+/* Sky background */
+.sky {
+  position: relative;
+  width: 100%;
+  height: 225px;
+  overflow: hidden;
+}
+
+/* All clouds */
+.cloud {
+  position: absolute;
+  top: 20px;
+  width: 80px;
+  opacity: 0.9;
+  animation: moveClouds linear infinite;
+}
+
+/* Unique starting positions */
+.cloud-sun {
+  top: 10px;
+  left: -100px;
+  animation-duration: 300s;
+}
+
+.cloud-1 {
+  top: 40px;
+  left: -200px;
+  animation-duration: 400s;
+}
+
+.cloud-2 {
+  top: 70px;
+  left: -150px;
+  animation-duration: 350s;
+}
+
+/* Animation keyframes */
+@keyframes moveClouds {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(120vw);
+  }
 }
 
 /* Form Container */
