@@ -47,7 +47,7 @@ main h1 {
 .cloud {
   position: absolute;
   top: 20px;
-  width: 80px;
+  width: 88px;
   opacity: 0.9;
   animation: moveClouds linear infinite;
 }
@@ -69,6 +69,18 @@ main h1 {
   top: 70px;
   left: -150px;
   animation-duration: 350s;
+}
+
+.cloud-3 {
+  top: 40px;
+  left: -300px;
+  animation-duration: 40s;
+}
+
+.cloud-4 {
+  top: 70px;
+  left: -250px;
+  animation-duration: 35s;
 }
 
 /* Animation keyframes */
