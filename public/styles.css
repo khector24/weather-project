@@ -39,57 +39,68 @@ main h1 {
 .sky {
   position: relative;
   width: 100%;
-  height: 225px;
+  height: 200px;
   overflow: hidden;
 }
 
 /* All clouds */
 .cloud {
   position: absolute;
-  top: 20px;
   width: 88px;
   opacity: 0.9;
-  animation: moveClouds linear infinite;
 }
 
-/* Unique starting positions */
+/* Move right (left to right) */
+.move-right {
+  left: -120px;
+  animation: moveCloudsRight linear infinite;
+}
+
+/* Move left (right to left) */
+.move-left {
+  right: -120px;
+  animation: moveCloudsLeft linear infinite;
+}
+
+/* Unique tops + durations */
 .cloud-sun {
   top: 10px;
-  left: -100px;
-  animation-duration: 300s;
+  animation-duration: 60s;
 }
-
 .cloud-1 {
   top: 40px;
-  left: -200px;
-  animation-duration: 400s;
+  animation-duration: 80s;
 }
-
 .cloud-2 {
   top: 70px;
-  left: -150px;
-  animation-duration: 350s;
+  animation-duration: 70s;
 }
-
 .cloud-3 {
-  top: 40px;
-  left: -300px;
-  animation-duration: 40s;
+  top: 30px;
+  animation-duration: 90s;
 }
-
 .cloud-4 {
-  top: 70px;
-  left: -250px;
-  animation-duration: 35s;
+  top: 60px;
+  animation-duration: 75s;
 }
 
-/* Animation keyframes */
-@keyframes moveClouds {
+/* Move clouds from left to right */
+@keyframes moveCloudsRight {
   0% {
     transform: translateX(0);
   }
   100% {
     transform: translateX(120vw);
+  }
+}
+
+/* Move clouds from right to left */
+@keyframes moveCloudsLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-120vw);
   }
 }
 
