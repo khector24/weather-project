@@ -1,33 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+  <%- include("partials/head") %>
 
-<%- include("partials/head") %>
+  <body>
+    <main>
+      <%- include("partials/clouds") %> <% if (error) { %>
+      <h1><%= error %></h1>
+      <img class="rain-icon" src="/images/rain.png" alt="Raining cloud" />
+      <% } else { %>
+      <h1>Weather in <%= city %></h1>
+      <div class="weather">
+        <p><%= description %></p>
+        <p>Temperature: <%= temp %> °F</p>
+        <img src="<%= iconURL %>" alt="Weather icon" />
+      </div>
+      <% } %>
 
-    <body>
-        <main>
-            <% if (error) { %>
-                <h1>
-                    <%= error %>
-                </h1>
-                <% } else { %>
-                    <h1>Weather in <%= city %>
-                    </h1>
-                    <div class="weather">
-                        <p>
-                            <%= description %>
-                        </p>
-                        <p>Temperature: <%= temp %> °F</p>
-                        <img src="<%= iconURL %>" alt="Weather icon">
-                    </div>
-                    <% } %>
-                        <br>
-                        <div class="search-btn-div">
-                            <a class="search-again-btn" href="/">Search again</a>
-                        </div>
-        </main>
+      <br />
+      <div class="search-btn-div">
+        <a class="search-again-btn" href="/">Search again</a>
+      </div>
+    </main>
 
-        <%- include("partials/footer") %>
-
-    </body>
-
+    <%- include("partials/footer") %>
+  </body>
 </html>
