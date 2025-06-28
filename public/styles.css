@@ -172,6 +172,25 @@ button:hover {
   background-color: #1976d2;
 }
 
+.search-again-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 24px;
+  background-color: #2196f3;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.search-again-btn:hover {
+  background-color: #1976d2;
+}
+
 /* Footer */
 footer {
   padding: 20px 0;
